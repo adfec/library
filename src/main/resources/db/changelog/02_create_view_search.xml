@@ -1,0 +1,31 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="002" author="user">
+        <createView viewName="v_search" replaceIfExists="true">
+            SELECT
+                b.id AS itemId,
+                b.code,
+                b.code_number AS codenumber,
+                b.format,
+                b.title,
+                b.authors,
+                b.edition,
+                b.rating,
+                CASE
+                    WHEN c.criteria = 'title' THEN b.title
+                    WHEN c.criteria = 'codeNumber' THEN b.code_number
+                    WHEN c.criteria = 'authors' THEN b.authors
+                END AS criteria,
+                b.copies AS availability
+            FROM BOOK AS b
+            JOIN (
+                SELECT 'title' AS criteria
+                UNION ALL
+                SELECT 'codeNumber'
+                UNION ALL
+                SELECT 'authors'
+            ) AS c
+        </createView>
+    </changeSet>
+</databaseChangeLog>

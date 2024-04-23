@@ -1,0 +1,18 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="005" author="user">
+        <createTable tableName="users">
+            <column name="nid" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="type_nid" type="varchar2(20)"/>
+            <column name="user_alias" type="varchar2(50)"/>
+            <column name="email" type="varchar2(100)"/>
+            <column name="name" type="varchar2(200)"/>
+            <column name="last_name" type="varchar2(200)"/>
+            <column name="active" type="int"/>
+            <column name="creation_date" type="timestamp" defaultValue="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

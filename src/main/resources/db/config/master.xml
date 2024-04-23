@@ -1,0 +1,11 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <include file="classpath:db/changelog/01_create_entity_book.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/02_create_view_search.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/03_create_index_search.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/04_create_entity_review.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/05_create_entity_user.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/06_create_entity_itemHolds.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/07_create_entity_booking.xml" relativeToChangelogFile="false" />
+    <include file="classpath:db/changelog/08_create_sequence_reviews.xml" relativeToChangelogFile="false" />
+</databaseChangeLog>
